@@ -13,10 +13,6 @@ interface IInfo {
   msg?: string;
 }
 
-interface IError {
-  code: number;
-}
-
 const search: FC = () => {
   const [qq, setQq] = useState<string>("");
 
