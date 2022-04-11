@@ -47,17 +47,14 @@ const search: FC = () => {
       <div className="searchCondition">
         <Search
           loading={loading}
+          placeholder="请输入qq号码"
           value={qq}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
             setQq(e.target.value);
           }}
           style={{ width: 250 }}
-          onPressEnter={() => {
-            search();
-          }}
-          onSearch={() => {
-            search();
-          }}
+          onPressEnter={search}
+          onSearch={search}
         ></Search>
       </div>
       <div className="searchResult">
