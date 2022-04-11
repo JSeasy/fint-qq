@@ -6,15 +6,15 @@ const { Search } = Input;
 const { Meta } = Card;
 interface IInfo {
   code: number;
-  qq: string;
-  name: string;
-  qlogo: string;
-  lvzuan: any;
+  qq?: string;
+  name?: string;
+  qlogo?: string;
+  lvzuan?: any;
+  msg?: string;
 }
 
 interface IError {
   code: number;
-  msg: string;
 }
 
 const search: FC = () => {
@@ -24,6 +24,11 @@ const search: FC = () => {
 
   const [info, setInfo] = useState<IInfo | null>(null);
 
+  // 请求响应是 {code:number,msg:string,data:IInfo | null},
+  // code 最好是标准状态码
+  // data只需返回 name, qlogo, qq
+  // 请求地址应是 /api/qq/info
+
   const search = () => {
     setInfo(null);
     setLoading(true);
@@ -32,7 +37,7 @@ const search: FC = () => {
     }).then((res) => {
       setLoading(false);
       res.json().then((res: IInfo) => {
-        if (res.qq) {
+        if (res.code === 1) {
           setInfo(res);
         } else {
           message.error(res.msg);
