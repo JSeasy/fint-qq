@@ -44,6 +44,7 @@ const search: FC = () => {
 
   return (
     <div className="search">
+      <h1>QQ号查询</h1>
       <div className="searchCondition">
         <Search
           loading={loading}
