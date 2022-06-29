@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "text": "node index.js"
+    "test": "node index.js"
   },
   "dependencies": {
     "antd": "^4.19.5",
