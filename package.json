@@ -6,7 +6,8 @@
     "prepare": "husky install",
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "text": "node index.js"
   },
   "dependencies": {
     "antd": "^4.19.5",
